@@ -1,0 +1,5 @@
+
+SELinux_Commands :
+	getenforce : To get the status of   SELinux Security_Mechanism !
+	setenforce : To set the Machine to the enfore MODE !
+	setenforce permissive : To set the Machine to the Permitive MODE !f 
