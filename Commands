@@ -44,10 +44,25 @@
 
 			( SYSTEM AND USERS )
 
+	 _______________
+	|PASSWORD SHIT :|
+	|_______________|
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	To configure the password expiration policy for a user:
+	-sudo chage -M 90 -m 7 -W 14 <username>
+	
+	Explanation of the options:
+
+	-M 90: Maximum age of the password in days (in this example, the password will expire after 90 days).
+	-m 7: Minimum age of the password in days (in this example, the user cannot change the password before 7 days).
+	-W 14: Warning period in days before the password expires (in this example, the user will get a warning 14 days before expiration).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	- sudo nano /etc/pam.d/common-password
 		Open the PAM password configuration file:
 
-	sudo nano /etc/pam.d/common-password
 		minlen=8: Minimum length of the password (8 characters in this example).
 		minclass=3: Minimum number of character classes (lowercase, uppercase, digits, and special characters). In this case, the password must have at least 3 different classes.
 		maxrepeat=2: Maximum number of allowed consecutive repeated characters.
