@@ -1,0 +1,98 @@
+————————————————————————————————————————————————————————————————————————————————————————————————
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+————————————————————————————————————————————————————————————————————————————————————————————————
+
+			SELinux_Commands :
+
+	getenforce : To get the status of   SELinux Security_Mechanism !
+
+	setenforce : To set the Machine to the enfore MODE !
+
+	setenforce permissive : To set the Machine to the Permitive MODE !f 
+
+————————————————————————————————————————————————————————————————————————————————————————————————
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+			SYSTEMCTL : 
+
+	systemctl status ufw : this one gives u the status of the service  u specified .
+
+
+————————————————————————————————————————————————————————————————————————————————————————————————
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+			UFW :
+
+	- ufw default allow outgoing : this one allows the system to reach for resources .
+
+	- ufw default deny incoming : this denies any one trying to  establish any connection not requested outgoinly .
+
+	- sudo ufw allow 22 :  		  this command allowing all the protocols on the port 22 
+
+	- sudo ufw allow 22/tcp : 	  this command  only allowing the tcp on the port 22.
+
+	- ufw status : 				  this command shows u the open ports on ufw (sudo)
+
+————————————————————————————————————————————————————————————————————————————————————————————————
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+			( SYSTEM AND USERS )
+
+	- sudo nano /etc/pam.d/common-password
+		Open the PAM password configuration file:
+
+	sudo nano /etc/pam.d/common-password
+		minlen=8: Minimum length of the password (8 characters in this example).
+		minclass=3: Minimum number of character classes (lowercase, uppercase, digits, and special characters). In this case, the password must have at least 3 different classes.
+		maxrepeat=2: Maximum number of allowed consecutive repeated characters.
+		retry=3: Number of retry attempts if a password doesn’t meet the requirements.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	- cut -d: -f1 /etc/passwd  : this command allow to show the users on the machine ! 
+		-d (delimiter): Specifies the delimiter that separates the fields. By default, cut assumes that the fields are separated by a tab. With the -d option, you can specify a different delimiter.
+		-f (fields): Selects which fields (columns) to output. The fields are numbered starting from  ( specify wich "TARF" to output from every line ! ) . 
+
+
+	- cat /etc/group : this command allow to show all the groups on the machine ! 
+
+	- sudo useradd newuser : this command allow to add a new user on the machine ! 
+
+	- sudo usermod -aG sudo sel-mir : this command adds the sel-mir user to the sudo group ! 
+			The -a (append) option tells usermod to add the user to the specified group(s) without removing them from other existing groups.
+			The -G option allows you to specify a comma-separated list of groups that the user should be added to. ( allow to add the user in multiple groups seperated by comma ! )
+
+	- allows to edit the sudoers file : 
+
+	#	username ALL=(ALL:ALL) ALL  : this is the line i did    add to the sudoers file to get the sel-mir user added to the sudoers 
+
+	Explaination : 
+
+	- username: The username of the user you are adding.
+
+	- ALL: Specifies that the user can run commands from any terminal.
+
+	- (ALL:ALL): Specifies that the user can run commands as any user and any group.
+
+	- ALL: The user can run all commands.
+
+
+
+Differences Between the : ( sudo su | sudo "command" | su -) :
+
+	- Use sudo command for running specific administrative commands as root without switching to a new shell.
+
+	- Use sudo su if you need to start a shell session as root without typing the root password.
+
+	- Use su - if you need to switch to root and fully load the root user's environment and settings.
+
+
+	Envirenement_Variables  :
+
+	- env : It Shows  u the

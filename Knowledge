@@ -1,0 +1,42 @@
++-----------------+
+|  Physical Disk  |
+|  (e.g., /dev/sda)|
++-----------------+
+
+
+
+       | | first the Physical_Device (hard drive) get transformed to a partition (so a step is jumped over)that gets
+	   			transformed to physical volume using the "pvcreate" in this step a metadata 
+					get writted on the partition so that the LVM recognize it !
+					SO  the main difference between these step is the metadata
+
+
++-----------------+
+| Physical Volume |
+|  (/dev/sda1)    |
++-----------------+
+       |
++-----------------+
+|  Volume Group   |
+|    (vg0)        |
++-----------------+
+       |
++-----------------+
+| Logical Volumes |
+|  (lv_root,      |
+|   lv_home)      |
++-----------------+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		Why when we install an app it get's on all of the users on the system while creating a file only on that specific USER !
+
+- This is due to the : " System-Wide-Operatios "  &&  " User-Specific-Operations " , for example the " apt " Package_Manager is operating on Paths like : " /user/bin " &&  " user/local/bin " wich are Parts of the PATH Envirenement of ALL USERS !, and also the " apt " requires the 
+	" sudo " to work wich means it operetes on the /
+
+
+	PAM (Pluggable Authentication Modules)
+
+
+	On a Linux machine, users can belong to one or more groups. Groups are used to manage permissions and control access to resources on the system. There are several types of groups, and you can assign users to groups to grant them specific privileges.
