@@ -27,6 +27,15 @@
 |   lv_home)      |
 +-----------------+
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	The differences between the : (  NAT && BRIDGED && HOST ONLY && INTERNEL_NETWORK ) ! :
+
+	So in the NAT it creates a virtuall machine and gives the vm a private ip to make the communication between the host and the vm possible and whenever the vm wants something it asks for the host wich means one real  ip used , 
+		and the bridged the vm have it's own ip that retrieves it from the router using the hosts network interface like its a normal physical device , 
+			host only it also create a subnet and gives the device a private ip and it only communicates with the host with no ability to acces the internet throught the host or soemthing ,
+				the internel network cerates a subnet restricting the communication with anyone ouside of that network
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -34,9 +43,16 @@
 
 - This is due to the : " System-Wide-Operatios "  &&  " User-Specific-Operations " , for example the " apt " Package_Manager is operating on Paths like : " /user/bin " &&  " user/local/bin " wich are Parts of the PATH Envirenement of ALL USERS !, and also the " apt " requires the 
 	" sudo " to work wich means it operetes on the /
+	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 	PAM (Pluggable Authentication Modules)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	On a Linux machine, users can belong to one or more groups. Groups are used to manage permissions and control access to resources on the system. There are several types of groups, and you can assign users to groups to grant them specific privileges.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Lighttpd (pronounced "lighty") is a lightweight, fast, and efficient open-source web server software. It is designed to use minimal system resources while delivering high performance, making it ideal for low-memory or embedded systems.

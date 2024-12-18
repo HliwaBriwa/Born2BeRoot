@@ -48,6 +48,21 @@
 	|PASSWORD SHIT :|
 	|_______________|
 
+	The password expiration Date :
+
+	- for user in $(cut -d: -f1 /etc/passwd); do sudo chage --maxdays 30 --mindays 2 --warndays 7 "$user" 2>/dev/null done  :		this is the command that extracts the user in the system and apply the : chage command .
+
+	cut -d: -f1 /etc/passwd: Extracts the usernames from /etc/passwd.
+	chage: Configures the password aging for each user.
+	2>/dev/null: Ignores errors for system accounts (e.g., root, nobody).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	The password expiration for future users :
+
+	- sudo nano /etc/login.defs : edit this file with : PASS_MAX_DAYS   30 + PASS_MIN_DAYS   2 + PASS_WARN_AGE   7
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	To configure the password expiration policy for a user:
@@ -61,6 +76,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	- sudo nano /etc/pam.d/common-password
+
 		Open the PAM password configuration file:
 
 		minlen=8: Minimum length of the password (8 characters in this example).
@@ -71,17 +87,26 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	- cut -d: -f1 /etc/passwd  : this command allow to show the users on the machine ! 
+
 		-d (delimiter): Specifies the delimiter that separates the fields. By default, cut assumes that the fields are separated by a tab. With the -d option, you can specify a different delimiter.
 		-f (fields): Selects which fields (columns) to output. The fields are numbered starting from  ( specify wich "TARF" to output from every line ! ) . 
 
 
 	- cat /etc/group : this command allow to show all the groups on the machine ! 
 
-	- sudo useradd newuser : this command allow to add a new user on the machine ! 
+	- sudo useradd newuser : this command allow u to add a new user on the machine ! 
+	- sudo userdel username : this command allow  u to delete a user on the machine ! 
+ 
 
 	- sudo usermod -aG sudo sel-mir : this command adds the sel-mir user to the sudo group ! 
 			The -a (append) option tells usermod to add the user to the specified group(s) without removing them from other existing groups.
 			The -G option allows you to specify a comma-separated list of groups that the user should be added to. ( allow to add the user in multiple groups seperated by comma ! )
+			
+
+	- sudo groupadd groupname : this command allow u to add a new group on the machine ! 
+	- sudo groupdel groupname : this command allow u to delete a user on the machine ! 
+
+
 
 	- allows to edit the sudoers file : 
 
