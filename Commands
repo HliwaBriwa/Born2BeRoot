@@ -122,8 +122,7 @@
 
 	- ALL: The user can run all commands.
 
-
-
+ 
 Differences Between the : ( sudo su | sudo "command" | su -) :
 
 	- Use sudo command for running specific administrative commands as root without switching to a new shell.
