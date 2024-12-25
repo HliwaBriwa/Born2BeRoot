@@ -1,0 +1,8 @@
+    
+                                                                                                This file  goes through the Subject_pdf and the Evaluation_pdf ! 
+
+                How to change  the hostname :   sudo hostname new_hostname 
+
+                How to check the password Policy for a username : sudo chage -l username
+
+                
