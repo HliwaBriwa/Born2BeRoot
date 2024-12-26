@@ -1,37 +1,69 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-what is SUDO ?
+	what is SUDO ?
+
+	sudo (short for "superuser do") is a command in Unix-like operating systems that allows a user to execute commands with elevated privileges, typically as the superuser (root). It acts as a controlled gateway to perform administrative tasks without switching to the root user account.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	Does accessing the : ( ROOT : /Pathz ) require the " Root_Permission " ? 
+
+	-Cause paths like this contains important files  ! 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	what is a KERNEL && Whre it's Located and how does it work ? 
 
+		- On the the based Linux systems the kernel files are located usually in the /boot partition ! , it's the bridge betweenth the hardware and   the application running on the machine making the use of the machine resources possible and making system version 
+
+		difference not a problem  when working with the same programs ! 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	Spectre v2 mitigation leakes CPU vulnerable to RETBleed attacks, data leaks possible ! 
+
+		What is Spectre v2?
+	Spectre v2 is a vulnerability in modern CPUs that exploits speculative execution to leak sensitive data. CPUs try to predict which instructions might be executed next to improve performance. However, attackers can manipulate this prediction process to access restricted data.
+
+	Mitigations for Spectre v2
+	To combat Spectre v2, software and firmware updates implemented mechanisms like retpoline and indirect branch restricted speculation (IBRS) to restrict speculative execution paths.
+
+	What is RETBleed?
+	RETBleed is a speculative execution attack discovered in 2022. It targets the return stack buffer (RSB), a CPU mechanism that predicts return addresses during function calls. By poisoning the RSB, attackers can exploit speculative execution paths and potentially leak data.
+
+	Connection to Spectre v2 Mitigations
+	Ironically, some Spectre v2 mitigations unintentionally make systems more vulnerable to RETBleed. Here's why:
+
+	Retpoline introduces overhead by replacing indirect jumps with sequences that manipulate the return stack buffer.
+	RETBleed exploits this manipulation, making CPUs vulnerable under specific configurations.
+	Depending on the CPU (e.g., AMD Zen or Intel Skylake), attackers can bypass protections and leak data.
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	what is systemctl ? 
 
+	so the systemctl is the commandline tool that u can manages the services on the machine through it , and thats through  the sytemd wich is the default init system and it's the first process loaded by the kernel that initiliase the sytem including the envirenement  variable
+		
+	and stuff like that ! 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	whats the difference between the : NAT && BRIDGED && ............. 
+	whats the difference between the : NAT && BRIDGED && .............  
+
+		- See the Knowledge File !
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	port forwarding AZBI ! 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	what is " systemctl " 
+	-Netwroking Thecnique that enables u to communicated with Nated (NAT) Devices ! 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	Whathats the difference between the : ( EXT4 && EXT3 && EXT2 )
+
+		- journalling and that nasty stuff ! 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -60,6 +92,8 @@ What is MariaDB?
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	why there's two tcp connection ? 
+	why there's three tcp connection ? 
+
+		Because there's three connection u can demonstrate in the port forwarding !
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
